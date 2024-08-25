@@ -1,11 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <style>
+        body {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: 'Roboto', sans-serif;
+        }
+
+
+
+
+        .form-container {
+            width: 100%;
+            max-width: 500px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+        }
+
+
+
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+
+
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+
+        input[type="text"], input[type="email"], input[type="password"], select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+       
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+
+
+
+        button:hover {
+            background-color: #45a049;
+        }
+       
+    </style>
+    <title>Tela de Cadastro</title>
 </head>
 <body>
-    
+    <div class="form-container">
+        <form>
+            <div class="form-group">
+                <label for="name">Nome Completo:</label>
+                <input type="text" id="name" placeholder="Nome Completo">
+            </div>
+            <div class="form-group">
+                <label for="email">RG:</label>
+                <input type="email" id="email" placeholder="00.000.000-0">
+            </div>
+            <div class="form-group">
+                <label for="password">Pai:</label>
+                <input type="text" id="text" placeholder="Nome do Pai">
+            </div>
+            <div class="form-group">
+                <label for="options">Escolaridade:</label>
+                <select id="options">
+                    <option value="" disabled selected>Selecione uma opção</option>
+                    <option value="option1">Educação Infantil</option>
+                    <option value="option2">Ensino Fundamental</option>
+                    <option value="option3">Ensino Médio</option>
+                    <option value="option3">Ensino Técnico</option>
+                    <option value="option3">Ensino Superior</option>
+                    <option value="option3">Pós-Graduação</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="password">Telefone:</label>
+                <input type="text" id="text" placeholder="0000-0000">
+            </div>
+            <button type="submit">Cadastrar</button>
+        </form>
+    </div>
 </body>
 </html>
