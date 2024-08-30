@@ -14,10 +14,6 @@
             background-color: #f0f0f0;
             font-family: 'Roboto', sans-serif;
         }
-
-
-
-
         .form-container {
             width: 100%;
             max-width: 500px;
@@ -27,32 +23,24 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             box-sizing: border-box;
         }
-
-
-
-
         .form-group {
             margin-bottom: 15px;
         }
-
-
-
-
         label {
             display: block;
             margin-bottom: 5px;
             font-weight: 700;
         }
-
-
-        input[type="text"], input[type="email"], input[type="password"], select {
+        input[type="text"], 
+        input[type="email"], 
+        input[type="password"], 
+        select {
             width: 100%;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
             font-size: 16px;
         }
-       
         button {
             width: 100%;
             padding: 10px;
@@ -63,50 +51,84 @@
             font-size: 16px;
             cursor: pointer;
         }
-
-
-
-
         button:hover {
             background-color: #45a049;
         }
-       
     </style>
     <title>Tela de Cadastro</title>
 </head>
 <body>
     <div class="form-container">
-        <form>
+        <form id="completeForm">
+            <!-- Campos existentes -->
             <div class="form-group">
                 <label for="name">Nome Completo:</label>
-                <input type="text" id="name" placeholder="Nome Completo">
+                <input type="text" id="name" name="name" placeholder="Nome Completo" required>
             </div>
             <div class="form-group">
                 <label for="email">RG:</label>
-                <input type="email" id="email" placeholder="00.000.000-0">
+                <input type="text" id="email" name="email" placeholder="00.000.000-0" required>
             </div>
             <div class="form-group">
                 <label for="password">Pai:</label>
-                <input type="text" id="text" placeholder="Nome do Pai">
+                <input type="text" id="password" name="password" placeholder="Nome do Pai" required>
             </div>
             <div class="form-group">
                 <label for="options">Escolaridade:</label>
-                <select id="options">
+                <select id="options" name="options" required>
                     <option value="" disabled selected>Selecione uma opção</option>
                     <option value="option1">Educação Infantil</option>
                     <option value="option2">Ensino Fundamental</option>
                     <option value="option3">Ensino Médio</option>
-                    <option value="option3">Ensino Técnico</option>
-                    <option value="option3">Ensino Superior</option>
-                    <option value="option3">Pós-Graduação</option>
+                    <option value="option4">Ensino Técnico</option>
+                    <option value="option5">Ensino Superior</option>
+                    <option value="option6">Pós-Graduação</option>
                 </select>
             </div>
             <div class="form-group">
-                <label for="password">Telefone:</label>
-                <input type="text" id="text" placeholder="0000-0000">
+                <label for="telefone">Telefone:</label>
+                <input type="text" id="telefone" name="telefone" placeholder="0000-0000" required>
+            </div>
+            <!-- Novos campos -->
+            <div class="form-group">
+                <label for="cpf">CPF:</label>
+                <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" required>
+            </div>
+            <div class="form-group">
+                <label for="celular">Celular:</label>
+                <input type="text" id="celular" name="celular" placeholder="(00) 00000-0000" required>
+            </div>
+            <div class="form-group">
+                <label for="mae">Nome da Mãe:</label>
+                <input type="text" id="mae" name="mae" placeholder="Digite o nome da mãe" required>
             </div>
             <button type="submit">Cadastrar</button>
         </form>
     </div>
+    <script>
+        document.getElementById('completeForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio do formulário para a demonstração
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const options = document.getElementById('options').value;
+            const telefone = document.getElementById('telefone').value;
+            const cpf = document.getElementById('cpf').value;
+            const celular = document.getElementById('celular').value;
+            const mae = document.getElementById('mae').value;
+
+            // Aqui você pode adicionar a lógica para processar os dados ou enviar para um servidor
+            console.log('Nome Completo:', name);
+            console.log('RG:', email);
+            console.log('Nome do Pai:', password);
+            console.log('Escolaridade:', options);
+            console.log('Telefone:', telefone);
+            console.log('CPF:', cpf);
+            console.log('Celular:', celular);
+            console.log('Nome da Mãe:', mae);
+
+            alert('Formulário enviado com sucesso!');
+        });
+    </script>
 </body>
 </html>
